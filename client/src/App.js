@@ -5,7 +5,7 @@ import Home from './containers/Home';
 import Signup from './containers/Signup';
 import Login from './containers/Login';
 import NotFound from './containers/NotFound';
-import { isTokenExpired } from './utils/authService';
+
 
 class Router extends React.Component {
   state = {

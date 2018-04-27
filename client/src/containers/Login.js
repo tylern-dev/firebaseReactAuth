@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Error from '../components/Error';
 
 
-import withAuth from '../helper/AuthHOC';
+
 
 const Login = ({ submitUser, changeValue, error }) => (
   <Fragment>

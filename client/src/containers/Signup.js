@@ -2,11 +2,10 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 import Error from '../components/Error';
-import withAuth from '../helper/AuthHOC';
+
 
 const Signup = ({ signUpUser, changeValue, error }) => (
   <Fragment>
-
     <h1>Create Account</h1>
     <form onSubmit={signUpUser}>
       <label htmlFor="email">Email</label>
