@@ -12,29 +12,7 @@ class Router extends React.Component {
   }
 
 
-  componentDidMount() {
-    isTokenExpired((res) => {
-      if (res) {
-        this.setState({ isAuthenticated: true });
-      } else {
-        this.setState({ isAuthenticated: false });
-      }
-    });
-  }
 
-  updateIsLoggedIn = () => {
-    if (this.state.isAuthenticated === false) {
-      this.setState({ isAuthenticated: true });
-    }
-    console.log(this.state.isAuthenticated);
-  }
-
-  handleLogout = () => {
-    if (this.state.isAuthenticated) {
-      this.setState({ isAuthenticated: false });
-    }
-    localStorage.removeItem('tkid');
-  }
 
   // had to use render in order to pass props
   render() {
