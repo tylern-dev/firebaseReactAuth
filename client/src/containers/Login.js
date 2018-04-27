@@ -29,4 +29,4 @@ Login.propTypes = {
 };
 
 
-export default withAuth(Login);
+export default Login;

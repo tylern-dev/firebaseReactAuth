@@ -28,4 +28,4 @@ Signup.propTypes = {
   changeValue: PropTypes.func.isRequired,
   error: PropTypes.string,
 };
-export default withAuth(Signup);
+export default Signup;
