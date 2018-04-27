@@ -4,6 +4,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require('mongoose');
 const logger = require('morgan');
+const admin = require('firebase-admin');
 const app = express();
 const PORT = process.env.PORT || 5500;
 
@@ -13,6 +14,9 @@ app.use(logger('dev'))
 
 // db connection
 require('./config/dbConnection')(mongoose);
+
+//firebase admin
+require('./config/firebaseConnection')(admin);
 
 
 //route imports
