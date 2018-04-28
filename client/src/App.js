@@ -12,8 +12,6 @@ class Router extends React.Component {
   }
 
 
-
-
   // had to use render in order to pass props
   render() {
     return (
@@ -21,15 +19,12 @@ class Router extends React.Component {
       <Fragment>
         <Navbar auth={this.state.isAuthenticated} handleLogout={this.handleLogout} />
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" render={props => <Home {...props} />} />
           <Route path="/signup" render={props => <Signup {...props} updateIsLoggedIn={this.updateIsLoggedIn} />} />
           <Route path="/login" render={props => <Login {...props} updateIsLoggedIn={this.updateIsLoggedIn} />} />
           <Route component={NotFound} />
         </Switch>
-
       </Fragment>
-
-
     );
   }
 }

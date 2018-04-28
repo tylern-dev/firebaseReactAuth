@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-
+import withAuth from '../HOC/AuthenticationHOC';
 import Error from '../components/Error';
 
 
@@ -28,4 +28,4 @@ Signup.propTypes = {
   changeValue: PropTypes.func.isRequired,
   error: PropTypes.string,
 };
-export default Signup;
+export default withAuth(Signup);
