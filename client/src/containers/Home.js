@@ -5,14 +5,14 @@ class Home extends React.Component {
   state = {
     response: '',
   }
-  componentDidMount() {
-    this.apiCall()
-      .then((res) => {
-        console.log(res.express);
-        this.setState({ response: res.express });
-      })
-      .catch(err => console.log(err));
-  }
+  // componentDidMount() {
+  //   this.apiCall()
+  //     .then((res) => {
+  //       console.log(res.express);
+  //       this.setState({ response: res.express });
+  //     })
+  //     .catch(err => console.log(err));
+  // }
 
   apiCall = async () => {
     const response = await fetch('/api/hello');
@@ -23,10 +23,13 @@ class Home extends React.Component {
   }
 
   render() {
+    const { response } = this.state;
     return (
       <Fragment>
-
-        <h1 className="home">{this.state.response}</h1>
+        {response
+        ? <h1 className="home">{response}</h1>
+        : <h1 className="home">Welcome</h1>
+        }
       </Fragment>
     );
   }

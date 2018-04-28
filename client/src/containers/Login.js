@@ -1,15 +1,12 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Error from '../components/Error';
+import withAuth from '../HOC/AuthenticationHOC';
 
-
-
-
-const Login = ({ submitUser, changeValue, error }) => (
+const Login = ({ signIn, changeValue, error }) => (
   <Fragment>
-
     <h1>Login Page</h1>
-    <form onSubmit={submitUser}>
+    <form onSubmit={signIn}>
       <label htmlFor="email">Email:
         <input id="email" type="text" name="email" onChange={changeValue} />
       </label>
@@ -23,10 +20,10 @@ const Login = ({ submitUser, changeValue, error }) => (
 );
 
 Login.propTypes = {
-  submitUser: PropTypes.func.isRequired,
+  signIn: PropTypes.func.isRequired,
   changeValue: PropTypes.func.isRequired,
   error: PropTypes.string,
 };
 
 
-export default Login;
+export default withAuth(Login);
